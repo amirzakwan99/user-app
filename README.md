@@ -109,3 +109,14 @@ Open your browser and go to: [http://localhost:8003/](http://localhost:8003/)
 | GET       | `/users/export`       | Export users to Excel file                                   |
 
 ---
+
+## Assumptions and Design Choices
+
+* **Soft Deletes for Users:** Users are not permanently removed. Their `status` is set to `STATUS_DELETED` to allow recovery.
+* **AJAX DataTables:** User listing supports AJAX filtering for responsive UI and performance.
+* **Validation Rules:** Server-side validation ensures unique `phone_number` and `email` and maintains data integrity.
+* **Export Functionality:** Users can be exported to Excel, assuming dataset is not extremely large.
+* **RESTful Routing:** Bulk delete and export handled via a separate endpoint as these actions differ from standard single-resource operations in RESTful design
+* **Security Considerations:** Passwords are hashed, and masked in responses.
+
+---
