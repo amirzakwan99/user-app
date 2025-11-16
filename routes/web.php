@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::delete('user/destroy-bulk', [UserController::class, 'destroyBulk'])->name('user.destroy-bulk');
+Route::get('user/export', [UserController::class, 'export'])->name('user.export');
 
 // Standard resource routes for user (index, create, store, edit, update, destroy)
 Route::resource('user', UserController::class)->except(['show']);

@@ -1,23 +1,24 @@
 @extends('layout.main')
 
 @section('content')
-    <div class="p-4 shadow mb-4 " style="background-color:aliceblue;">
+    <div class="p-4 card shadow mb-4" style="background-color:aliceblue;">
         <h1 class="h3 mb-2 text-gray-800">{{ 'User Table' }}</h1>
         <div class="p-3"></div>
-        <div class="btn-group" role="group" id="status-tabs">
-            <button type="button" class="btn btn-primary" data-status="">All</button>
-            <button type="button" class="btn btn-outline-primary" data-status="1">Active</button>
-            <button type="button" class="btn btn-outline-primary" data-status="0">Inactive</button>
-        </div>
-        <a href="{{ route('user.create') }}">
-            <button class="btn btn-primary" type="button">Add User</button>
-        </a>
         <form action="{{ route('user.destroy-bulk') }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display:inline;">
             @csrf
             @method('DELETE')
-            <button class="btn btn-danger" type="submit" title="Bulk Delete">
-                Bulk Delete
-            </button>
+            <div class="d-flex justify-content-between">
+                <div class="btn-group" role="group" id="status-tabs">
+                    <button type="button" class="btn btn-primary" data-status="">All</button>
+                    <button type="button" class="btn btn-outline-primary" data-status="1">Active</button>
+                    <button type="button" class="btn btn-outline-primary" data-status="0">Inactive</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary mr-2" onclick="window.location='{{ route('user.export') }}'">Export</button>
+                    <button type="button" class="btn btn-primary mr-2" onclick="window.location='{{ route('user.create') }}'">Add User</button>
+                    <button class="btn btn-danger" type="submit" title="Bulk Delete">Bulk Delete</button>
+                </div>
+            </div>
             <div class="p-3"></div>
             <table id="user" class="table table-striped table-bordered">
                 <thead>

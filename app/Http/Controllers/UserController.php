@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
@@ -157,5 +159,10 @@ class UserController extends Controller
         User::whereIn('id', $ids)->delete();
 
         return redirect()->route('user.index')->with('success', 'Selected users deleted successfully.');
+    }
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }
