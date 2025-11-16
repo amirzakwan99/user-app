@@ -94,6 +94,8 @@ php artisan migrate --seed
 
 Open your browser and go to: [http://localhost:8003/](http://localhost:8003/)
 
+---
+
 ## API Endpoints
 
 | Method    | Endpoint              | Description                                                  |
