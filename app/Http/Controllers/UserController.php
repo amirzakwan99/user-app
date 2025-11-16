@@ -16,7 +16,16 @@ class UserController extends Controller
         if ($request->ajax()) {
             // $query = User::withTrashed();
             $query = User::query();
-            
+
+            $status = $request->input('status');
+
+            if ($status !== null && $status !== '') {
+                $query->where('status', (int) $status);
+            }
+            // else {
+            //     $query->withTrashed();
+            // }
+
             return DataTables::of($query)
                 ->addColumn('action', function ($user) {
                     $editUrl = route('user.edit', $user->id);

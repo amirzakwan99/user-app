@@ -4,6 +4,11 @@
     <div class="p-4 shadow mb-4 " style="background-color:aliceblue;">
         <h1 class="h3 mb-2 text-gray-800">{{ 'User Table' }}</h1>
         <div class="p-3"></div>
+        <div class="btn-group" role="group" id="status-tabs">
+            <button type="button" class="btn btn-primary" data-status="">All</button>
+            <button type="button" class="btn btn-outline-primary" data-status="1">Active</button>
+            <button type="button" class="btn btn-outline-primary" data-status="0">Inactive</button>
+        </div>
         <a href="{{ route('user.create') }}">
             <button class="btn btn-primary" type="button">Add User</button>
         </a>
@@ -32,11 +37,17 @@
     </div>
 
     <script>
-        $('#user').DataTable({
+        let table;
+        let currentStatus = '';
+
+        table = $('#user').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
                 url: '{{ route('user.index') }}',
+                data: function (d) {
+                    d.status = currentStatus;
+                }
             },
             columns: [
                 { data: 'checkbox', name: 'checkbox', orderable: false, searchable: false},
@@ -66,6 +77,16 @@
             var allChecked = $pageCheckboxes.length && $pageCheckboxes.filter(':checked').length === $pageCheckboxes.length;
             $('#checkbox-all').prop('checked', !!allChecked);
         });
+
+        $('#status-tabs button').on('click', function (e) {
+            e.preventDefault();
+            $('#status-tabs button').removeClass('btn-primary').addClass('btn-outline-primary');
+            $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+
+            currentStatus = $(this).data('status') ?? '';
+            table.ajax.reload();
+        });
+
     </script>
 
 @endsection
