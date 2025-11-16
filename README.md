@@ -93,3 +93,19 @@ php artisan migrate --seed
 10. **Access the application**
 
 Open your browser and go to: [http://localhost:8003/](http://localhost:8003/)
+
+## API Endpoints
+
+| Method    | Endpoint              | Description                                                  |
+| --------- | --------------------- | ------------------------------------------------------------ |
+| GET       | `/users`              | List all users (supports AJAX with optional `status` filter) |
+| GET       | `/users/create`       | Show form to create a new user                               |
+| POST      | `/users`              | Store a new user                                             |
+| GET       | `/users/{id}`         | Display a specific user (not used)                           |
+| GET       | `/users/{id}/edit`    | Show form to edit an existing user                           |
+| PUT/PATCH | `/users/{id}`         | Update an existing user                                      |
+| DELETE    | `/users/{id}`         | Soft delete a user                                           |
+| POST      | `/users/destroy-bulk` | Soft delete multiple users by IDs                            |
+| GET       | `/users/export`       | Export users to Excel file                                   |
+
+---
