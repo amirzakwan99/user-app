@@ -1,6 +1,33 @@
 # Project Setup Guide
 
+![PHP](https://img.shields.io/badge/PHP-8.0+-blue)
+![Composer](https://img.shields.io/badge/Composer-Installed-brightgreen)
+![Git](https://img.shields.io/badge/Git-Installed-orange)
+![Docker](https://img.shields.io/badge/Docker-Required-blueviolet)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Required-lightgrey)
+
 A step-by-step guide to set up and run the project locally.
+
+---
+
+## Table of Contents
+
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Environment Setup](#environment-setup)
+* [Running the Application](#running-the-application)
+* [Accessing the App](#accessing-the-app)
+
+---
+
+## Prerequisites
+
+Before starting, ensure you have the following installed:
+
+* PHP 8 or higher
+* Composer
+* Git
+* Docker & Docker Compose
 
 ---
 
@@ -8,7 +35,7 @@ A step-by-step guide to set up and run the project locally.
 
 1. **Install PHP 8^, Composer, Git, Docker & Docker Compose**
 
-Ensure you have PHP 8 or higher, Composer, Git, Docker, and Docker Compose installed on your system.
+Ensure you have all required tools installed on your system.
 
 2. **Clone the repository**
 
@@ -66,4 +93,3 @@ php artisan migrate --seed
 10. **Access the application**
 
 Open your browser and go to: [http://localhost:8003/](http://localhost:8003/)
-
