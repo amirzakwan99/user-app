@@ -6,9 +6,9 @@ A step-by-step guide to set up and run the project locally.
 
 ## Steps
 
-1. **Install Composer & PHP 8 or higher**
+1. **Install PHP 8^, Composer, Git, Docker & Docker Compose**
 
-Ensure you have PHP 8^ and Composer installed on your system.
+Ensure you have PHP 8 or higher, Composer, Git, Docker, and Docker Compose installed on your system.
 
 2. **Clone the repository**
 
