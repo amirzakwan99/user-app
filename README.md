@@ -14,9 +14,7 @@ A step-by-step guide to set up and run the project locally.
 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
-* [Environment Setup](#environment-setup)
-* [Running the Application](#running-the-application)
-* [Accessing the App](#accessing-the-app)
+* [API Endpoints](#api-endpoints)
 
 ---
 
@@ -31,7 +29,7 @@ Before starting, ensure you have the following installed:
 
 ---
 
-## Steps
+## Installation
 
 1. **Install PHP 8^, Composer, Git, Docker & Docker Compose**
 
