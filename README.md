@@ -69,6 +69,7 @@ composer install
 ```bash
 docker compose up -d --build
 ```
+Ensure all services in the docker container are running.
 
 7. **Access the app container**
 
