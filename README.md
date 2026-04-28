@@ -91,9 +91,7 @@ php artisan migrate --seed
 
 10. **Access the application**
 
-```bash
 Open your browser and go to: [http://localhost:8003/](http://localhost:8003/)
-```
 
 11. **Login using the email and password below**
 
